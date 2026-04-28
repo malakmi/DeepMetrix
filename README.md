@@ -53,6 +53,61 @@ jupyter notebook notebooks/eda_preprocessing.ipynb
 4. Update `DATA_DIR` in the **Constants & Config** cell to match your local path
 
 ---
+EDA Questions & Analysis
+
+As part of the analysis phase, a set of analytical questions (15+) were defined and answered using visualizations and statistical insights, such as:
+
+Which stores generate the highest weekly sales?
+What is the impact of holidays on sales performance?
+Which store type (A/B/C) performs best?
+How do promotions (MarkDowns) affect sales?
+What are the monthly and yearly sales trends?
+Which departments are consistently high-performing?
+Is there a correlation between economic factors (CPI, unemployment) and sales?
+How does temperature or fuel price influence sales behavior?
+
+These questions guided the EDA process and helped uncover meaningful patterns and business insights.
+
+📊 Exploratory Data Analysis (EDA)
+
+The EDA phase explores:
+
+Data distributions and skewness
+Sales trends over time (seasonality & patterns)
+Impact of holidays on sales
+Relationship between promotions (MarkDowns) and sales
+Correlation between economic indicators and sales
+🧹 Data Preprocessing Pipeline
+Handling Missing Values:
+MarkDown1–5 columns contained significant missing values and were filled with 0 under the assumption of no active promotion.
+Outlier Treatment:
+Extreme values were detected using the IQR method and clipped to reduce their impact on model performance.
+Feature Engineering:
+The Date column was decomposed into:
+Year
+Month
+Week
+Day
+Encoding Categorical Variables:
+Store types were converted into numerical values:
+A → 0
+B → 1
+C → 2
+Data Validation:
+No duplicate rows were found
+Data types were checked and corrected
+📊 Key Observations
+Sales exhibit strong seasonal patterns, especially during holidays
+Larger stores (Type A) tend to generate higher sales
+Promotional markdowns significantly influence sales spikes
+Economic indicators show relatively weak correlation with weekly sales
+🤖 Next Step
+
+The cleaned dataset will be used for:
+
+Machine Learning models (Linear Regression, Random Forest, XGBoost)
+Time Series models (ARIMA, Prophet)
+Evaluation using RMSE and MAE
 
 ## Results & Observations
 
